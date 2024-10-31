@@ -4,7 +4,7 @@ interface
 
 uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
-  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.Menus, Vcl.ExtCtrls, Vcl.ComCtrls,UCalculadora;
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.Menus, Vcl.ExtCtrls, Vcl.ComCtrls,UCalculadora, ULogin;
 
 type
   TfrmPrincipal = class(TForm)
@@ -20,12 +20,16 @@ type
     Calculadora2: TMenuItem;
     Calculadora3: TMenuItem;
     Sair3: TMenuItem;
+    N2: TMenuItem;
+    rocarUsurio1: TMenuItem;
     procedure Timer1Timer(Sender: TObject);
     procedure Calculadora1Click(Sender: TObject);
     procedure Calculadora2Click(Sender: TObject);
     procedure Sair2Click(Sender: TObject);
     procedure Sair3Click(Sender: TObject);
     procedure Sair1Click(Sender: TObject);
+    procedure FormShow(Sender: TObject);
+    procedure rocarUsurio1Click(Sender: TObject);
   private
     { Private declarations }
   public
@@ -53,6 +57,18 @@ begin
   frmCalculadora:= TfrmCalculadora.Create(Application);
   frmCalculadora.ShowModal;
   frmCalculadora.Free;
+end;
+
+procedure TfrmPrincipal.FormShow(Sender: TObject);
+begin
+  frmLogin:= TfrmLogin.Create(Application);
+  frmLogin.ShowModal;
+end;
+
+procedure TfrmPrincipal.rocarUsurio1Click(Sender: TObject);
+begin
+  frmLogin:= TfrmLogin.Create(Application);
+  frmLogin.ShowModal;
 end;
 
 procedure TfrmPrincipal.Sair1Click(Sender: TObject);

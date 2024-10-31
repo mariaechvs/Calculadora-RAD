@@ -13,6 +13,7 @@ object frmPrincipal: TfrmPrincipal
   Menu = MainMenu1
   PopupMenu = PopupMenu1
   WindowState = wsMaximized
+  OnShow = FormShow
   TextHeight = 15
   object StatusBar1: TStatusBar
     Left = 0
@@ -34,12 +35,19 @@ object frmPrincipal: TfrmPrincipal
     Left = 24
     Top = 24
     object a1: TMenuItem
-      Caption = 'Aplica'#231#245'es'
+      Caption = 'Aplicativos'
       object Calculadora1: TMenuItem
         Caption = 'Calculadora'
         OnClick = Calculadora1Click
       end
       object N1: TMenuItem
+        Caption = '-'
+      end
+      object rocarUsurio1: TMenuItem
+        Caption = 'Trocar Usu'#225'rio'
+        OnClick = rocarUsurio1Click
+      end
+      object N2: TMenuItem
         Caption = '-'
       end
       object Sair1: TMenuItem
